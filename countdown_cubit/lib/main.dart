@@ -101,8 +101,11 @@ class _MyHomePageState extends State<MyHomePage> {
                               visible: state is Running || state is Paused,
                               child: Padding(
                                 padding: EdgeInsets.only(left: 8),
-                                child: OutlinedButton(
+                                child: TextButton(
                                   style: ButtonStyle(
+                                      textStyle: MaterialStateProperty.all(
+                                          TextStyle(
+                                              fontWeight: FontWeight.bold)),
                                       side: MaterialStateProperty.all(
                                           BorderSide(
                                               width: 2,
