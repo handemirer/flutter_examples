@@ -21,6 +21,9 @@ class CountdownCubit extends Cubit<CountdownState> {
 
   void start() {
     run = !run;
+    if (_timer != null) {
+      _timer!.cancel();
+    }
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (run) {
         duration--;

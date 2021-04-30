@@ -101,8 +101,12 @@ class _MyHomePageState extends State<MyHomePage> {
                               visible: state is Running || state is Paused,
                               child: Padding(
                                 padding: EdgeInsets.only(left: 8),
-                                child: TextButton(
-                                  style: ButtonStyle(),
+                                child: OutlinedButton(
+                                  style: ButtonStyle(
+                                      side: MaterialStateProperty.all(
+                                          BorderSide(
+                                              width: 2,
+                                              color: Colors.deepPurple))),
                                   onPressed: () {
                                     BlocProvider.of<CountdownCubit>(context)
                                         .reset();
